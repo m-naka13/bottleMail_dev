@@ -1,0 +1,83 @@
+.page-index {
+  .key-visual {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 60px;
+    @include pc-screen {
+      margin-bottom: 120px;
+    }
+
+    &:after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-image: url(../img/index/kv_bg.png);
+      background-position: right top;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      @include pc-screen {
+        background-position: -100px top;
+      }
+    }
+
+    &__slide {
+      width: 100%;
+      height: 100%;
+
+      li {
+        width: 100%;
+        height: 100%;
+        p:nth-child(2) {
+          margin-left: 50vw;
+          @include pc-screen {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+  section {
+    h2 {
+      font-size: 20px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid $red;
+      padding-bottom: 16px;
+    }
+  }
+  
+  .page-index__intro {
+    padding-bottom: 60px;
+    background-image: url(../img/common/icon_01.png);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 100px;
+    p {
+      line-height: 1.8;
+    }
+    @include pc-screen {
+      background-position: right calc((100vw - 960px) / 2) bottom;
+      margin-bottom: 60px;
+    }
+  }
+  .page-index__recommend {
+    @include pc-screen {
+      margin-bottom: 60px;
+    }
+  }
+  .page-index__new {
+    padding-bottom: 60px;
+    background-image: url(../img/common/bg_01.png);
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    @include pc-screen {
+      background-size: 300px;
+      margin-bottom: 60px;
+    }
+  }
+  
+}

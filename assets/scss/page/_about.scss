@@ -1,0 +1,60 @@
+@include sp-screen {}
+
+.page-about {
+  .kv {
+    background: url(../img/about/key_visual.png) no-repeat;
+    background-size: cover;
+  }
+  .content {
+    counter-reset: number;
+    &__ttl {
+      padding: 45px 0 30px;
+      text-align: center;
+      @include rem-font-size(30);
+      font-weight: normal;
+      letter-spacing: 0.12em;
+      @include sp-screen {
+        padding: 15px 0;
+        @include rem-font-size(20);
+      }
+    }
+  }
+  .wrap {
+    @include pc-screen {
+      width: 900px;
+      margin: 0 auto;
+    }
+    @include sp-screen {
+      width: auto;
+      margin: 0 5%;
+    }
+  }
+  .table {
+    width: 100%;
+    border: solid 1px $mainColor;
+    margin-bottom: 65px;
+    @include rem-font-size(16);
+    @include sp-screen {
+      @include rem-font-size(14);
+    }
+    th,
+    td {
+      padding: 15px 20px;
+      @include sp-screen {
+        padding: 10px;
+      }
+    }
+    th {
+      width: 28%;
+      background: $mainColor;
+      color: $white;
+      border-bottom: solid 1px $white;
+    }
+    td {
+      border-bottom: solid 1px $mainColor;
+      a {
+        color: $mainColor;
+      }
+    }
+  }
+}

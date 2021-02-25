@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+html,body {
+  height: 100%;
+}
+body {
+  font-family: "source-han-serif-japanese","MS Mincho","\5C0F\585A\660E\671D Pro",serif;
+  line-height: 1.7;
+  color: $white;
+  background-color: $black;
+  font-size: 16px;
+  @include sp-screen {
+   
+  }
+}
+
+.pc-on {
+  display: block;
+}
+
+.sp-on {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.5s;
+  color: #fff;
+}
+
+img {
+  height: auto !important;
+}
+
+@include pc-screen {
+  a {
+    img {
+      transition: opacity 0.5s;
+      backface-visibility: hidden; 
+    }
+    &:hover {
+      opacity: 0.7;
+      text-decoration: none;
+    }
+    &[href^="tel:"] {
+      pointer-events: none;
+    }
+  } 
+  .post-cont {
+    font-size: 16px;
+  }
+}
+
+@include sp-screen {
+  
+  .pc-on {
+    display: none;
+  }
+
+  .sp-on {
+    display: block;
+  }
+  
+  img {
+    width:100%;
+  }
+    
+  input[type="text"],
+  input[type="button"],
+  input[type="email"],
+  input[type="submit"],
+  input[type="password"],
+  textarea {
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -webkit-appearance: none;
+      max-width: 100%;
+      border-radius: 0;
+  }
+  
+}

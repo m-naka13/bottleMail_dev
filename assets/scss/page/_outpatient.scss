@@ -1,0 +1,283 @@
+@include sp-screen {}
+
+.page-outpatient {
+  .kv {
+    background: url(../img/outpatient/key_visual.png) no-repeat;
+    background-size: cover;
+  }
+  .content {
+    counter-reset: number;
+    &__ttl {
+      padding: 45px 0 30px;
+      text-align: center;
+      @include rem-font-size(30);
+      font-weight: normal;
+      letter-spacing: 0.12em;
+      @include sp-screen {
+        padding: 15px 0;
+        @include rem-font-size(20);
+      }
+    }
+  }
+  .outpatient {
+    @include pc-screen {
+      width: 1024px;
+      margin: 0 auto 30px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    @include sp-screen {
+      width: auto;
+      margin: 0 5% 30px;
+    }
+    display: flex;
+    justify-content: space-between;
+    @include sp-screen {
+      flex-direction: column;
+    }
+  }
+  .subjects {
+    width: 495px;
+    margin-bottom: 16px;
+    @include sp-screen {
+      width: 100%;
+    }
+    dt {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      @include rem-font-size(20);
+      border-bottom: dotted 2px #c5c5c5;
+      letter-spacing: 0.12em;
+      @include sp-screen {
+        @include rem-font-size(18);
+      }
+      &.icon_course {
+        display: flex;
+        align-items: center;
+        &::before {
+          content: "";
+          display: block;
+          width: 42px;
+          height: 35px;
+          margin: 0 10px 0 0;
+          background: url(../img/common/icon_course.png) no-repeat center;
+          background-size: contain;
+        }
+      }
+      &.icon_physical-therapy {
+        display: flex;
+        align-items: center;
+        &::before {
+          content: "";
+          display: block;
+          width: 42px;
+          height: 35px;
+          margin: 0 10px 0 0;
+          background: url(../img/common/icon_physical-therapy.png) no-repeat center;
+          background-size: contain;
+        }
+      }
+      &.icon_closed {
+        display: flex;
+        align-items: center;
+        &::before {
+          content: "";
+          display: block;
+          width: 42px;
+          height: 35px;
+          margin: 0 10px 0 0;
+          background: url(../img/common/icon_closed.png) no-repeat center;
+          background-size: contain;
+        }
+      }
+    }
+    dd {
+      @include rem-font-size(16);
+      line-height: 1.5;
+      letter-spacing: 0.14em;
+      @include sp-screen {
+        @include rem-font-size(14);
+      }
+    }
+  }
+  .schedule {
+    width: 498px;
+    @include rem-font-size(16);
+    border: solid 1px #c5c5c5;
+    @include sp-screen {
+      width: 100%;
+      @include rem-font-size(14);
+    }
+    .bg-main {
+      background: $mainColor;
+      color: $white;
+      border-right: solid 1px $white;
+      border-bottom: none;
+      &:last-child {
+        border: none;
+      }
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+      border-bottom: solid 1px #c5c5c5;
+      border-right: solid 1px #c5c5c5;
+      &.align-l {
+        text-align: left;
+      }
+      &:last-child {
+        border-right: none;
+      }
+    }
+    td {
+      @include rem-font-size(18);
+      color: $mainColor;
+      @include sp-screen {
+        @include rem-font-size(16);
+      }
+    }
+  }
+  .note {
+    margin-top: 8px;
+    @include rem-font-size(13);
+  }
+  .wrap {
+    @include pc-screen {
+      width: 800px;
+      margin: 0 auto;
+    }
+    @include sp-screen {
+      width: auto;
+      margin: 0 5%;
+    }
+  }
+  .block {
+    margin-bottom: 120px;
+    @include sp-screen {
+      margin-bottom: 60px;
+    }
+    &__ttl {
+      margin-bottom: 30px;
+      @include rem-font-size(30);
+      letter-spacing: 0.12em;
+      text-align: center;
+      @include sp-screen {
+        margin-bottom: 15px;
+        @include rem-font-size(20);
+      }
+      span {
+        position: relative;
+        display: inline-block;
+        padding: 0 300px;
+        width: 200px;
+        @include sp-screen {
+          padding: 0 64px;
+          width: 160px;
+        }
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          display: inline-block;
+          width: 300px;
+          height: 1px;
+          background-color: $mainColor;
+          @include sp-screen {
+            width: 64px;
+          }
+        }
+        &::before {
+          left:0;
+        }
+        &:after {
+          right: 0;
+        }
+      }
+    }
+  }
+  .news {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    @include sp-screen {
+      align-items: flex-start;
+    }
+    &__date {
+      margin-right: 2em;
+      @include rem-font-size(13);
+    }
+    &__text {
+      @include rem-font-size(16);
+      @include sp-screen {
+        word-break: break-all;
+        @include rem-font-size(14);
+      }
+    }
+  }
+  .news-more {
+    text-align: right;
+    @include rem-font-size(14);
+    a {
+      position: relative;
+      display: inline-block;
+      padding: 0 12px 0 0;
+      vertical-align: middle;
+      text-decoration: none;
+      &::after {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 2px;
+        margin: auto;
+        vertical-align: middle;
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-top: 2px solid $mainColor;
+        border-right: 2px solid $mainColor;
+        transform: rotate(45deg);
+      }
+    }
+  }
+  .access {
+    .map {
+      width: 980px;
+      margin: 0 auto 30px;
+      @include sp-screen {
+        width: 100%;
+        iframe {
+          width: 100%;
+        }
+      }
+    }
+    .address,
+    .info {
+      @include rem-font-size(16);
+      letter-spacing: 0.14em;
+      @include sp-screen {
+        @include rem-font-size(14);
+      }
+    }
+    .address {
+      margin-bottom: calc(1em * 1.5);
+    }
+    .info {
+      &__ttl {
+        color: $mainColor;
+        margin-bottom: calc(1em * 1.5);
+      }
+      &__text {
+        //display: flex;
+        margin-bottom: calc(1em * 1.5);
+        a {
+          color: $mainColor;
+        }
+        &::before {
+          content: "□";
+        }
+      }
+    }
+  }
+}
